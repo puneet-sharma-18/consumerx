@@ -1,0 +1,26 @@
+# Netlify configuration for ConsumerX Ventures
+# Static single-page site — no build step required.
+
+[build]
+  publish = "."
+  command = ""
+
+# Long cache for the share image and logo assets (filenames are stable;
+# the OG tag uses ?v=N as a cache-buster when the image changes).
+[[headers]]
+  for = "/og-image.png"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Basic security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
