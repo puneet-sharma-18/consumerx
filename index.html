@@ -218,25 +218,64 @@
     .nav-toggle.open span:nth-child(2){opacity:0}
     .nav-toggle.open span:nth-child(3){top:10px;transform:rotate(-45deg)}
     body.menu-open{overflow:hidden}
-    .beliefs{grid-template-columns:1fr}
+
+    /* section rhythm */
+    .thesis,.firm{padding:90px 0}
+    .apply{padding:96px 0}
+    .section-head{margin-bottom:48px}
+
+    /* thesis: two-column intro stacks */
+    .lead-grid{grid-template-columns:1fr;gap:30px;margin-bottom:48px}
+
+    /* firm: main + aside stack */
     .firm-grid{grid-template-columns:1fr;gap:44px}
     .firm-aside{border-left:0;border-top:1px solid var(--line-light);padding-left:0;padding-top:28px}
+
     .scroll-hint{display:none}
   }
-  @media(max-width:560px){
-    :root{--pad:22px}
-    .hero-inner{padding:120px var(--pad) 110px}
-    .hero .label{margin-bottom:24px}
-    .hero h1{margin-bottom:22px}
+
+  /* ---- phones ---- */
+  @media(max-width:600px){
+    :root{--pad:20px}
+
+    /* hero */
+    .hero-inner{padding:116px var(--pad) 92px}
+    .hero .label{margin-bottom:22px}
+    .hero h1{margin-bottom:20px}
+    .hero p.lede{margin-bottom:30px}
     .hero-actions{flex-direction:column;align-items:stretch;width:100%}
     .hero-actions .btn{width:100%}
-    .thesis,.firm,.apply{padding:78px 0}
-    .section-head{margin-bottom:44px}
-    .belief{padding:34px 26px}
-    .belief .num{margin-bottom:16px}
-    footer{padding-top:60px;padding-bottom:calc(104px + env(safe-area-inset-bottom))}
-    .foot-top{flex-direction:column;gap:34px}
-    .foot-cols{gap:48px}
+
+    /* section rhythm */
+    .thesis,.firm{padding:66px 0}
+    .apply{padding:72px 0}
+    .section-head{margin-bottom:34px}
+    .sub-label{font-size:1rem;margin:2px 0 12px}
+
+    /* thesis intro */
+    .lead-grid{gap:22px;margin-bottom:38px}
+    .lead-statement{font-size:1.32rem;line-height:1.34}
+    .lead-body p{font-size:.98rem}
+    .lead-body .lead-emph{font-size:1.1rem}
+
+    /* trait + pillar boxes: full-width stacked cards (the fix) */
+    .traits,.pillars{grid-template-columns:1fr}
+    .pillars{margin-top:40px}
+    .trait,.pillar{padding:28px 24px}
+    .trait .num,.pillar .num{margin-bottom:12px}
+    .trait h3,.pillar h3{font-size:1.2rem}
+
+    /* firm */
+    .firm-body p{font-size:1rem;max-width:none}
+    .firm-lead{font-size:1.22rem!important;max-width:none!important}
+    .stat{padding:18px 0}
+    .stat .v{font-size:1.3rem}
+
+    /* footer */
+    footer{padding-top:54px;padding-bottom:calc(46px + env(safe-area-inset-bottom))}
+    .foot-top{flex-direction:column;gap:32px}
+    .foot-cols{gap:40px}
+    .foot-bottom{flex-direction:column;gap:8px}
   }
   @media(prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
