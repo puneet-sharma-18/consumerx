@@ -131,15 +131,22 @@
   /* THESIS */
   .thesis{background:var(--paper);padding:112px 0}
   .thesis .label{color:var(--crimson);margin-bottom:24px}
-  .section-head{max-width:760px;margin-bottom:64px}
+  .section-head{max-width:760px;margin-bottom:56px}
+  .sub-label{display:block;font-family:var(--serif);font-style:italic;font-size:1.08rem;color:var(--ink-soft);margin:4px 0 16px}
   .section-head h2{font-family:var(--serif);font-weight:360;font-size:clamp(1.85rem,5.4vw,3.2rem);line-height:1.1;letter-spacing:-.01em;color:var(--ink)}
   .section-head h2 em{font-style:italic;color:var(--crimson)}
-  .beliefs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-  .belief{background:var(--paper);padding:44px 40px;transition:background .4s var(--ease)}
-  .belief:hover{background:var(--paper-2)}
-  .belief .num{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--crimson);opacity:.7;margin-bottom:20px;display:block}
-  .belief h3{font-family:var(--serif);font-weight:430;font-size:1.45rem;line-height:1.18;margin-bottom:13px;letter-spacing:-.01em}
-  .belief p{font-size:.97rem;line-height:1.62;color:var(--ink-soft);font-weight:300}
+  /* lead statement + body two-column intro */
+  .lead-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-bottom:60px;max-width:1000px}
+  .lead-statement{font-family:var(--serif);font-weight:360;font-size:clamp(1.3rem,2.6vw,1.72rem);line-height:1.32;letter-spacing:-.01em;color:var(--ink)}
+  .lead-body p{font-size:1rem;line-height:1.66;color:var(--ink-soft);font-weight:300;margin-bottom:16px}
+  .lead-body .lead-emph{font-family:var(--serif);font-style:italic;color:var(--ink);font-size:1.14rem;font-weight:400;margin:6px 0 0}
+  /* traits / pillars shared 3-up grid */
+  .traits{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .trait{background:var(--paper);padding:38px 32px;transition:background .4s var(--ease)}
+  .trait:hover{background:var(--paper-2)}
+  .trait .num{font-family:var(--serif);font-style:italic;font-size:.95rem;color:var(--crimson);opacity:.7;margin-bottom:16px;display:block}
+  .trait h3{font-family:var(--serif);font-weight:430;font-size:1.22rem;line-height:1.2;margin-bottom:10px;letter-spacing:-.01em}
+  .trait p{font-size:.93rem;line-height:1.58;color:var(--ink-soft);font-weight:300}
 
   /* FIRM */
   .firm{background:var(--crimson-ink);color:#fff;padding:112px 0;position:relative;overflow:hidden;
@@ -148,8 +155,17 @@
   .firm-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:74px;align-items:start}
   .firm h2{font-family:var(--serif);font-weight:340;font-size:clamp(1.75rem,4.8vw,2.9rem);line-height:1.14;letter-spacing:-.01em;margin-bottom:28px}
   .firm h2 em{font-style:italic;color:#ffd9d2}
+  .firm .sub-label{color:rgba(255,255,255,.72)}
   .firm-body p{font-size:1.04rem;line-height:1.68;font-weight:300;color:rgba(255,255,255,.86);margin-bottom:18px;max-width:52ch}
+  .firm-body em{font-style:italic;color:#ffd9d2;font-weight:400}
+  .firm-lead{font-family:var(--serif);font-weight:360;font-size:clamp(1.18rem,2.3vw,1.5rem);line-height:1.34;color:#fff!important;margin-bottom:24px!important;max-width:30ch!important}
   .firm-aside{border-left:1px solid var(--line-light);padding-left:34px}
+  /* community pillars row */
+  .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-light);border:1px solid var(--line-light);margin-top:64px}
+  .pillar{background:var(--crimson-ink);padding:36px 30px}
+  .pillar .num{font-family:var(--serif);font-style:italic;font-size:.95rem;color:#ffd9d2;opacity:.85;margin-bottom:14px;display:block}
+  .pillar h3{font-family:var(--serif);font-weight:430;font-size:1.18rem;line-height:1.2;margin-bottom:10px;color:#fff;letter-spacing:-.01em}
+  .pillar p{font-size:.92rem;line-height:1.58;color:rgba(255,255,255,.82);font-weight:300}
   .stat{padding:20px 0;border-bottom:1px solid var(--line-light)}
   .stat:first-child{padding-top:0}.stat:last-child{border-bottom:0}
   .stat .k{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:8px}
@@ -270,29 +286,33 @@
 <section class="thesis" id="thesis">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="label solo">The Thesis</span>
-      <h2>We back the consumer brands of the next decade — <em>before they look inevitable.</em></h2>
+      <span class="label solo">01 — Who we back</span>
+      <span class="sub-label">The founders</span>
+      <h2>Built <em>differently.</em></h2>
     </div>
-    <div class="beliefs">
-      <div class="belief reveal">
-        <span class="num">01</span>
+    <div class="lead-grid reveal">
+      <p class="lead-statement">We're not looking for the safest bet on the market. We're looking for the founder who'd build this brand in a recession, in a bull market, in their kitchen if they had to.</p>
+      <div class="lead-body">
+        <p>The Indian consumer story has been overrun by founders chasing the moment — a hot category, a fundable narrative, a brand that looks good in a pitch deck. Most won't outlast their hype cycle.</p>
+        <p>We back the other kind. Operators who understand their consumer like a craftsman understands their material. Founders with a point of view so specific it would be dismissed in a board meeting — and so right it becomes obvious in five years.</p>
+        <p class="lead-emph">Builders built for the long arc. The kind you'd bet on twice.</p>
+      </div>
+    </div>
+    <div class="traits">
+      <div class="trait reveal">
+        <span class="num">i</span>
+        <h3>Operators, not pitchers</h3>
+        <p>Builders who'd be doing this with or without a fund.</p>
+      </div>
+      <div class="trait reveal" style="transition-delay:.08s">
+        <span class="num">ii</span>
         <h3>Conviction over consensus</h3>
-        <p>We invest in the unreasonable — founders too obsessed to quit, building the things the market hasn't learned to want yet. The best consumer brands always look obvious in hindsight and irrational at the start.</p>
+        <p>A specific point of view on the consumer. The kind that only gets validated in retrospect.</p>
       </div>
-      <div class="belief reveal" style="transition-delay:.08s">
-        <span class="num">02</span>
-        <h3>The consumer is culture</h3>
-        <p>Enduring brands don't just sell products. They earn a place in people's lives, homes and identity. We back teams who understand that distribution wins the quarter, but love wins the decade.</p>
-      </div>
-      <div class="belief reveal" style="transition-delay:.16s">
-        <span class="num">03</span>
-        <h3>First cheque, full conviction</h3>
-        <p>We write the first institutional cheque and earn the right to the next ten years. Early enough to be wrong with you, committed enough to be there when it gets hard.</p>
-      </div>
-      <div class="belief reveal" style="transition-delay:.24s">
-        <span class="num">04</span>
-        <h3>Built in India, made for the world</h3>
-        <p>The next generation of iconic consumer brands won't just be built for India. They'll be exported from it. We partner with founders thinking in decades and in continents.</p>
+      <div class="trait reveal" style="transition-delay:.16s">
+        <span class="num">iii</span>
+        <h3>Built to compound</h3>
+        <p>In it for the decade. Not the deck.</p>
       </div>
     </div>
   </div>
