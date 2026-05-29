@@ -7,3 +7,6 @@ Thumbs.db
 
 # Netlify local
 .netlify/
+
+# Local preview backups (not deployed)
+.backups/
